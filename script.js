@@ -28,25 +28,28 @@
   const templates = {
     about: () => `
       <h2 id="detail-title">INTRODUCE</h2>
-      <p class="detail-lede">궁금한 것은 직접 만들고 실험하며 배우는 컴퓨터공학 학생, 이수아입니다.</p>
+      <p class="detail-lede">움직이는 것의 원리를 배우고, 움직이게 하는 방법을 고민합니다.</p>
       <div class="detail-grid">
         <p class="detail-label">ABOUT / APPROACH</p>
         <div class="detail-body">
-          <p>AI와 소프트웨어를 중심으로 웹 서비스, 로봇, 위성통신까지 서로 다른 분야를 연결합니다. 아이디어에서 멈추지 않고 직접 구현한 뒤, 다른 사람도 따라갈 수 있도록 과정과 한계를 정리하는 일을 중요하게 생각합니다.</p>
+          <p><strong>이수아 · 서강대학교 컴퓨터공학 + 기계공학</strong></p>
+          <p>기계공학에서 배운 원리와 컴퓨터공학의 기술을 바탕으로 로봇, AI, 시뮬레이션 등 다양한 분야를 탐구하고 있습니다.</p>
           <h3>FOCUS</h3>
-          <ul class="tags"><li>SOFTWARE</li><li>AI & DATA</li><li>ROBOTICS</li><li>RESEARCH & SIMULATION</li></ul>
+          <ul class="tags"><li>AI / DATA</li><li>ROBOTICS</li><li>AEROSPACE</li></ul>
+          <h3>SKILLS</h3>
+          <ul class="tags"><li>Python</li><li>C</li><li>C++</li><li>OpenCV</li><li>WebGL</li></ul>
         </div>
       </div>`,
     community: () => `
       <h2 id="detail-title">COMMUNITY</h2>
-      <p class="detail-lede">배운 것을 혼자 남겨두지 않고, 함께 실험할 수 있는 구조로 바꿉니다.</p>
+      <p class="detail-lede">서강대학교에서 함께한 학회·연구 활동입니다.</p>
       <div class="detail-grid">
         <p class="detail-label">LEADERSHIP / STUDY</p>
         <div class="detail-body">
           <h3>PARROT — PRESIDENT</h3>
-          <p>AI/Data Science 학회장으로 산학·연합 프로젝트, 데이터톤, 동문 연사 행사를 기획하고 진행했습니다. 화재 탐지 드론과 PVD 증착률 예측 프로젝트는 참가 전에 기술과 데이터를 직접 점검해 실행 흐름을 정리했습니다.</p>
+          <p>서강대학교 데이터사이언스 학회 Parrot에서 학회장을 맡아 OT·MT와 동문 연사 행사를 기획·운영했습니다. 타 대학 학회와 연합 데이터톤을 준비하며 데이터셋과 과제, 시제품 시연·발표 기준을 정했습니다. 화재 탐지 드론과 반도체 PVD 증착률 예측 프로젝트에서는 데이터와 기술을 미리 검토하고 참가자용 개발 가이드를 작성했습니다.</p>
           <h3>SOGANG INTELLIGENCE TEAM</h3>
-          <p>AI 논문을 문제, 방법, 실험, 한계로 나누어 분석하고 발표·토론합니다. 복잡한 연구를 정확하면서도 이해하기 쉬운 언어로 설명하는 역량을 기르고 있습니다.</p>
+          <p>대학원생이 운영하는 스터디에서 AI 논문의 문제의식, 방법론, 실험 결과와 한계를 분석했습니다. 논문을 발표 자료로 정리하고, 평가 지표와 연구 결과를 비교하며 스터디원들과 토론했습니다.</p>
           <a href="https://parrot-alumni-2026.netlify.app/" target="_blank" rel="noreferrer">PARROT ALUMNI EVENT WEBSITE ↗</a>
         </div>
       </div>`,
