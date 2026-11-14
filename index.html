@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="이수아의 소프트웨어, AI, 로보틱스 프로젝트 포트폴리오">
+  <meta name="theme-color" content="#050505">
+  <title>이수아 — Selected Works</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#index">콘텐츠로 바로가기</a>
+
+  <header class="site-header" aria-label="사이트 헤더">
+    <a class="wordmark" href="#landing" aria-label="처음으로 이동">SOOAH</a>
+    <p class="header-note">COMPUTER SCIENCE<br>SELECTED WORKS</p>
+    <button class="soundless-index" type="button" data-open="about" aria-haspopup="dialog">INFO</button>
+  </header>
+
+  <main>
+    <div class="page-shell">
+      <div class="page-track">
+        <section class="panel panel-hero" id="landing" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">PORTFOLIO / 2026</p>
+            <h1 id="hero-title">BUILD.<br>TEST.<br>EXPLAIN.</h1>
+          </div>
+
+          <div class="kinetic-object" aria-hidden="true">
+            <img class="hero-shuttle" src="shuttle-clean.png" width="1632" height="960" alt="" fetchpriority="high" decoding="async">
+          </div>
+
+          <div class="hero-footer">
+            <p>궁금한 것은 직접 만들고,<br>실험하며 배우는 개발자.</p>
+            <p class="scroll-hint"><span>SCROLL</span><span class="scroll-line"></span><span>TO EXPLORE</span></p>
+          </div>
+        </section>
+
+        <section class="panel panel-index" id="index" aria-labelledby="index-title">
+          <div class="index-meta">
+            <p class="eyebrow">INDEX / 01—04</p>
+            <p>화면을 선택해<br>자세히 살펴보세요.</p>
+          </div>
+          <nav class="mega-nav" aria-label="포트폴리오 상세 메뉴">
+            <h2 id="index-title" class="sr-only">포트폴리오 메뉴</h2>
+            <button type="button" data-open="about"><span>01</span>INTRODUCE</button>
+            <button type="button" data-open="projects"><span>02</span>PROJECTS</button>
+            <button type="button" data-open="community"><span>03</span>COMMUNITY</button>
+            <button type="button" data-open="contact"><span>04</span>CONTACT</button>
+          </nav>
+          <p class="index-caption">SELECT AN ITEM</p>
+        </section>
+
+        <section class="panel panel-method" id="method" aria-labelledby="method-title">
+          <div class="method-header">
+            <p class="eyebrow">WORKING METHOD / 03</p>
+            <p>FROM QUESTION<br>TO WORKING SYSTEM</p>
+          </div>
+          <h2 id="method-title">I CONNECT<br><span>IDEAS</span> TO<br>REAL USE.</h2>
+          <div class="method-grid">
+            <article><span>01</span><h3>DEFINE</h3><p>문제를 작게 나누고 검증 가능한 질문으로 바꿉니다.</p></article>
+            <article><span>02</span><h3>BUILD</h3><p>데이터, 모델, 인터페이스를 실제 흐름으로 연결합니다.</p></article>
+            <article><span>03</span><h3>VERIFY</h3><p>결과와 한계를 함께 기록해 다음 실험의 기준을 만듭니다.</p></article>
+          </div>
+        </section>
+
+        <section class="panel panel-contact" id="contact-panel" aria-labelledby="contact-title">
+          <p class="eyebrow">NEXT / 04</p>
+          <div class="contact-center">
+            <h2 id="contact-title">LET'S MAKE<br>SOMETHING<br>USEFUL.</h2>
+            <a href="https://github.com/adeomise" target="_blank" rel="noreferrer">GITHUB.COM/ADEOMISE</a>
+          </div>
+          <div class="contact-footer">
+            <p>SOFTWARE · AI & DATA<br>ROBOTICS · RESEARCH</p>
+            <p>SEOUL, KOREA<br>OPEN TO COLLABORATION</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <div class="detail-layer" role="dialog" aria-modal="true" aria-labelledby="detail-title" aria-hidden="true">
+    <div class="detail-backdrop" data-close></div>
+    <section class="detail-panel" tabindex="-1">
+      <header class="detail-header">
+        <p class="detail-kicker">PORTFOLIO / DETAIL</p>
+        <button class="detail-close" type="button" data-close aria-label="상세 화면 닫기">CLOSE <span aria-hidden="true">×</span></button>
+      </header>
+      <div class="detail-content" id="detail-content">
+        <h2 id="detail-title">DETAIL</h2>
+      </div>
+    </section>
+  </div>
+
+  <noscript><p class="noscript">프로젝트 상세 화면을 보려면 JavaScript를 활성화해 주세요.</p></noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="project-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
