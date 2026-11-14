@@ -126,35 +126,6 @@
     });
   }
 
-  function initShuttleEntrance() {
-    const image = document.querySelector('.hero-shuttle');
-    if (!window.gsap || reduceMotion) {
-      image.style.visibility = 'visible';
-      return;
-    }
-    gsap.set(image, { autoAlpha: 0 });
-    const hero = document.querySelector('.panel-hero');
-    const shuttle = image.parentElement;
-    function enter() {
-      shuttle.classList.add('is-entering');
-      gsap.fromTo(image, {
-        x: -hero.clientWidth * .95,
-        y: -hero.clientHeight * .8,
-        scale: .72,
-        autoAlpha: 0
-      }, {
-        x: 0, y: 0, scale: 1, autoAlpha: 1,
-        delay: .05, duration: 1.1, ease: 'power2.out',
-        onComplete: () => {
-          shuttle.classList.remove('is-entering');
-          gsap.set(image, { clearProps: 'transform' });
-        }
-      });
-    }
-    if (image.complete) enter();
-    else image.addEventListener('load', enter, { once: true });
-  }
-
   openers.forEach(button => button.addEventListener('click', () => openDetail(button.dataset.open)));
   layer.addEventListener('click', event => {
     if (event.target.closest('[data-close]')) closeDetail();
@@ -174,5 +145,4 @@
   });
 
   initVerticalProgress();
-  initShuttleEntrance();
 })();
