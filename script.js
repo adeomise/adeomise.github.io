@@ -59,10 +59,9 @@
       <h2 id="detail-title">CONTACT</h2>
       <p class="detail-lede">새로운 문제를 함께 정의하고, 실제로 움직이는 결과를 만들고 싶습니다.</p>
       <div class="detail-grid">
-        <p class="detail-label">EMAIL / LOCATION</p>
+        <p class="detail-label">PROFILE / INTERESTS</p>
         <div class="detail-body">
           <h3>PROFILE</h3><p><a href="https://github.com/adeomise" target="_blank" rel="noreferrer">github.com/adeomise ↗</a></p>
-          <h3>BASE</h3><p>Seoul, Korea</p>
           <h3>INTERESTED IN</h3><ul class="tags"><li>PRODUCT ENGINEERING</li><li>AI APPLICATION</li><li>ROBOTICS</li><li>RESEARCH</li></ul>
         </div>
       </div>`,
