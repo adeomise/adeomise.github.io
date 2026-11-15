@@ -14,10 +14,10 @@
   })[character]);
 
   function projectMarkup(project, index) {
-    return `<details class="project-card" data-category="${escapeHtml(project.category)}">
+    return `<details class="project-card" data-category="${escapeHtml(project.category)}" data-featured="${project.featured}">
       <summary>
         <span class="project-number">${String(index + 1).padStart(2, '0')}</span>
-        <span class="project-heading"><span class="project-name">${escapeHtml(project.name)}</span><span class="project-category">${escapeHtml(project.category)}</span></span>
+        <span class="project-heading"><span class="project-name">${escapeHtml(project.name)}</span><span class="project-category">${escapeHtml(project.category)}${project.featured ? ' · 대표 프로젝트' : ''}</span></span>
         <span class="project-status">${escapeHtml(project.status)}</span>
         <span class="project-toggle" aria-hidden="true">+</span>
       </summary>
@@ -33,11 +33,13 @@
         <p class="detail-label">ABOUT / APPROACH</p>
         <div class="detail-body">
           <p><strong>이수아 · 서강대학교 컴퓨터공학 + 기계공학</strong></p>
-          <p>기계공학에서 배운 원리와 컴퓨터공학의 기술을 바탕으로 로봇, AI, 시뮬레이션 등 다양한 분야를 탐구하고 있습니다.</p>
+          <p>기계공학에서 배운 원리와 컴퓨터공학의 기술을 바탕으로 다양한 분야를 탐구하고 있습니다.</p>
           <h3>FOCUS</h3>
           <ul class="tags"><li>AI / DATA</li><li>ROBOTICS</li><li>AEROSPACE</li></ul>
           <h3>SKILLS</h3>
           <ul class="tags"><li>Python</li><li>C</li><li>C++</li><li>OpenCV</li><li>WebGL</li></ul>
+          <h3>자격증</h3>
+          <ul class="tags"><li>SQLD</li></ul>
         </div>
       </div>`,
     community: () => `
@@ -47,9 +49,9 @@
         <p class="detail-label">LEADERSHIP / STUDY</p>
         <div class="detail-body">
           <h3>PARROT — PRESIDENT</h3>
-          <p>서강대학교 데이터사이언스 학회 Parrot에서 학회장을 맡아 OT·MT와 동문 연사 행사를 기획·운영했습니다. 타 대학 학회와 연합 데이터톤을 준비하며 데이터셋과 과제, 시제품 시연·발표 기준을 정했습니다. 화재 탐지 드론과 반도체 PVD 증착률 예측 프로젝트에서는 데이터와 기술을 미리 검토하고 참가자용 개발 가이드를 작성했습니다.</p>
+          <p>서강대학교 데이터사이언스 학회 Parrot에서 학회장으로 OT·MT와 동문 연사 행사를 기획·운영하고, 학회원들이 교류하고 함께 활동할 기회를 마련했습니다. 타 대학 학회와 연합 데이터톤을 기획해 데이터셋 선정부터 과제, 진행 방식, 시제품 시연과 발표 안내까지 준비했습니다. 화재 탐지 드론과 반도체 PVD 증착률 예측 프로젝트를 기획하고, 데이터와 기술을 사전 검토해 참가자용 개발 가이드와 진행 절차를 정리했습니다.</p>
           <h3>SOGANG INTELLIGENCE TEAM</h3>
-          <p>대학원생이 운영하는 스터디에서 AI 논문의 문제의식, 방법론, 실험 결과와 한계를 분석했습니다. 논문을 발표 자료로 정리하고, 평가 지표와 연구 결과를 비교하며 스터디원들과 토론했습니다.</p>
+          <p>대학원생이 운영하는 스터디에서 AI 논문의 문제의식, 방법론, 실험 결과와 한계를 분석했습니다. 논문을 발표 자료로 정리하고, 평가 지표와 연구 결과를 비교·해석하며 스터디원들과 토론했습니다. 관심 분야의 연구 흐름을 파악하고 복잡한 기술 내용을 명확히 설명하는 능력을 길렀습니다.</p>
           <a href="https://parrot-alumni-2026.netlify.app/" target="_blank" rel="noreferrer">PARROT ALUMNI EVENT WEBSITE ↗</a>
         </div>
       </div>`,
@@ -66,9 +68,9 @@
       </div>`,
     projects: () => `
       <h2 id="detail-title">PROJECTS</h2>
-      <p class="detail-lede">직접 만들고, 분석하고, 기획한 ${projects.length}개의 작업입니다. 제목을 누르면 세부 내용을 펼쳐볼 수 있습니다.</p>
-      <div class="project-filters" role="group" aria-label="분야별 프로젝트 보기">
-        ${['전체', ...new Set(projects.map(project => project.category))].map(category => `<button type="button" data-filter="${escapeHtml(category)}" aria-pressed="${category === '전체'}">${escapeHtml(category)}</button>`).join('')}
+      <p class="detail-lede">궁금한 것을 찾아보고 직접 시도하며 쌓아 온 ${projects.length}개의 프로젝트입니다. 제목을 누르면 세부 내용을 펼쳐볼 수 있습니다.</p>
+      <div class="project-filters" role="group" aria-label="프로젝트 필터">
+        ${['전체', '대표 프로젝트', ...new Set(projects.map(project => project.category))].map(category => `<button type="button" data-filter="${escapeHtml(category)}" aria-pressed="${category === '전체'}">${escapeHtml(category)}</button>`).join('')}
       </div>
       <p class="project-count" aria-live="polite">전체 ${projects.length}개</p>
       <div class="project-list" aria-label="전체 프로젝트 목록">${projects.map(projectMarkup).join('')}</div>`
@@ -78,7 +80,8 @@
     content.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
     let count = 0;
     content.querySelectorAll('.project-card').forEach(card => {
-      card.hidden = category !== '전체' && card.dataset.category !== category;
+      const matches = category === '대표 프로젝트' ? card.dataset.featured === 'true' : card.dataset.category === category;
+      card.hidden = category !== '전체' && !matches;
       if (!card.hidden) count++;
     });
     content.querySelector('.project-count').textContent = `${category} ${count}개`;
